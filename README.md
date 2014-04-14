@@ -13,7 +13,7 @@ If you know how to achieve the same funcionality without those dependencies feel
 
 
 ----------
-To actually use pythonbitly you'll have to get your bit.ly API Token which you can get [here][4]. You'll then have to insert it in place of `YOUR_TOKEN_HERE`in the code.
+To actually use pythonbitly you'll have to get your bit.ly API Token which you can get [here][4]. You'll then have to insert it in place of `YOUR_TOKEN_HERE` in the code.
 
 
   [1]: https://github.com/kennethreitz/requests
