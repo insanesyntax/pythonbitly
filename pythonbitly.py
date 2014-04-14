@@ -24,7 +24,7 @@ import requests, json, pyperclip
 
 
 class bcolors:
-    #Diese Klasse definiert verschidene Farben für den Terminaloutput
+    #This class defines the different colors that may be used in the code
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
     OKGREEN = '\033[92m'
@@ -43,8 +43,8 @@ class bcolors:
         self.BOLD = ''
 
 def get_short(longURL):
-    #Die Hauptsächliche Funktion dieses Skripts.
-    #Sie nimmt eine lange URL entgegen, wandelt diese in Kurzform um, gibt diese zurück und kopiert sie in die Zwischenablage. 
+    #The main function of this script
+    #It takes a long URL, requests the short URL from bit.ly, returns it and copies it into the clipboard.
     query_params = {
     'access_token': 'YOUR_TOKEN_HERE',
     'longUrl': longURL
