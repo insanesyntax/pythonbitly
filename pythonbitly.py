@@ -59,7 +59,7 @@ def get_short(longURL):
     #The main function of this script
     #It takes a long URL, requests the short URL from bit.ly, returns it and copies it into the clipboard.
     query_params = {
-    'access_token': '70fe81c157645c2e608431797a5f6ec448de2750',
+    'access_token': 'YOUR_TOKEN_HERE',
     'longUrl': args["<longURL>"]
     }
     endpoint = 'https://api-ssl.bitly.com/v3/shorten'
