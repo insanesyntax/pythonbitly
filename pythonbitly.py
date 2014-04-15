@@ -20,8 +20,21 @@
 #  
 #  
 
-import requests, json, pyperclip
+"""
+Usage: pythonbitly <longURL>
+"""
 
+import requests, json, pyperclip
+from docopt import docopt
+
+
+if __name__ == "__main__":
+    # Docopt will check all arguments, and exit with the Usage string if they
+    # don't pass.
+    # If you simply want to pass your own modules documentation then use __doc__,
+    # otherwise, you would pass another docopt-friendly usage string here.
+    # You could also pass your own arguments instead of sys.argv with: docopt(__doc__, argv=[your, args])
+    args = docopt(__doc__)
 
 class bcolors:
     #This class defines the different colors that may be used in the code
@@ -46,8 +59,8 @@ def get_short(longURL):
     #The main function of this script
     #It takes a long URL, requests the short URL from bit.ly, returns it and copies it into the clipboard.
     query_params = {
-    'access_token': 'YOUR_TOKEN_HERE',
-    'longUrl': longURL
+    'access_token': '70fe81c157645c2e608431797a5f6ec448de2750',
+    'longUrl': args["<longURL>"]
     }
     endpoint = 'https://api-ssl.bitly.com/v3/shorten'
     response = requests.get(endpoint, params=query_params, verify=False)
@@ -56,7 +69,6 @@ def get_short(longURL):
     pyperclip.copy(shortURL)
     return shortURL
 
-longURL = raw_input("Dein langer Link: ")
-
-print "Dein gekürzter Link: ", bcolors.HEADER, bcolors.BOLD, get_short(longURL), bcolors.ENDC
-print "Er befindet sich auch in der Zwischenablage."
+#In the following line get_short(args) will be called
+print "Your shortened Link:", bcolors.HEADER, bcolors.BOLD, get_short(args), bcolors.ENDC
+print "It has also been copied to the clipboard."
